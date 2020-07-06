@@ -15,6 +15,7 @@ class Chip
 		void load_rom(std::string);
 		void initialize();
 		void start();
+		void screen_conversion(Uint32*);
 
 	private:
 		uint8_t memory[4096];		//Banco de memoria para la CPU
@@ -25,6 +26,7 @@ class Chip
 		uint16_t i; 				//Registro especial de dirección I
 		uint8_t delay_timer;		//Temporizador
 		uint8_t sound_timer;		//Temporizador de sonido
+		char screen[2048];			//Pantalla
 
 };
 
