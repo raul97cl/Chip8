@@ -3,13 +3,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 using namespace std;
 
 int main(int argc, char **argv)
 {
 	int last_tick = 0;
-
+	int cont = 0;
 	//Inicia emulador
 	Chip *chip8 = new Chip();
 	chip8->initialize();
@@ -37,6 +36,7 @@ int main(int argc, char **argv)
 
 	int quit = 0;
 	SDL_Event event;
+	int cycles = 0;
 	while(!quit)
 	{
 
@@ -53,15 +53,23 @@ int main(int argc, char **argv)
 
 		}
 
-		if(SDL_GetTicks() - last_tick > (1000 / 60))
+		if(SDL_GetTicks() - cycles > 1)
 		{
-			chip8->initialize();
+			if(!chip8->check_wait_key())
+				chip8->step();
+
+			cycles = SDL_GetTicks();
+		}
+
+		if((SDL_GetTicks() - last_tick) > (1000 / 60))
+		{
+			chip8->timer_decrement();
 
 			SDL_LockTexture(texture, nullptr, &surface->pixels, &surface->pitch);
 			chip8->screen_conversion((Uint32*)surface->pixels);
 			SDL_UnlockTexture(texture);
 
-			SDL_RenderClear(renderer);
+			//SDL_RenderClear(renderer);
 			SDL_RenderCopy(renderer, texture, nullptr, nullptr);
 			SDL_RenderPresent(renderer);
 			last_tick = SDL_GetTicks();
@@ -76,4 +84,5 @@ int main(int argc, char **argv)
 
 	return 0;
 }
+
 

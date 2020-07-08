@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1594046770 source:d:\c++\chip8\main.cpp
+1594237512 source:d:\c++\chip8\main.cpp
 	<iostream>
 	"Chip.h"
 	<stdlib.h>
 	<time.h>
 
-1594047023 source:d:\c++\chip8\src\chip.cpp
+1594235020 source:d:\c++\chip8\src\chip.cpp
 	"Chip.h"
 
-1594047090 d:\c++\chip8\include\chip.h
+1594237260 d:\c++\chip8\include\chip.h
 	<iostream>
 	<fstream>
 	<SDL2/SDL.h>
