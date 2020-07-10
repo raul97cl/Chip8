@@ -23,14 +23,15 @@ void Chip::initialize()
     this->sound_timer = 0;
     this->pc = 0x200;
 	this->wait_key = -1;
-   /* for(int i = 0; i < 16; i++)
-    {
-        stack[i] = 0;
-        v[i] = 0;
-    }*/
     memset(this->stack, 0, 32);
     memset(v, 0, 16);
 	memcpy(memory + 0x50, hexcodes, 80);
+	/*for(int j = 80; j < 160; j++)
+	{
+		memory[j] = hexcodes[j - 80];
+
+	}*/
+
 }
 
 void Chip::step()
@@ -39,7 +40,7 @@ void Chip::step()
 
 
     //Lee dos bytes de la memoria
-    uint16_t opcode = (memory[pc] << 8 )| memory[pc + 1];
+    uint16_t opcode = (memory[pc] << 8 ) | memory[pc + 1];
     /*pc += 2;
     if((pc + 2) == mem_length)
     	pc = 0;*/
@@ -277,7 +278,7 @@ void Chip::step()
 					break;
 				case 0x1E:
 					//ADD I, x
-					i += v[x];
+					this->i += v[x];
 					std::cout << "add I, x" << std::endl;
 					break;
 				case 0x29:
@@ -287,14 +288,15 @@ void Chip::step()
 					break;
 				case 0x33:
 					//LD I, x
-					memory[this->i + 2] = v[x] % 10;
-					memory[this->i + 1] = (v[x] / 10) % 10;
 					memory[this->i] = (v[x] / 100);
+					memory[this->i + 1] = (v[x] / 10) % 10;
+					memory[this->i + 2] = v[x] % 10;
+
 					std::cout << "ld B" << std::endl;
 					break;
 				case 0x55:
 					//LD [I], x
-					for(int reg = 0; i <= x; reg++)
+					for(int reg = 0; reg <= x; reg++)
 					{
 						memory[this->i + reg] = v[reg];
 					}
@@ -302,7 +304,7 @@ void Chip::step()
 					break;
 				case 0x65:
 					//LD x, [I]
-					for(int reg = 0; i <= x; reg++)
+					for(int reg = 0; reg <= x; reg++)
 					{
 						v[reg] = memory[this->i + reg];
 					}
@@ -318,7 +320,7 @@ void Chip::step()
 
 void Chip::load_rom(std::string rom)
 {
-    FILE *file = fopen("PONG", "rb");
+    FILE *file = fopen("../roms/PONG", "rb");
 
     if(file == nullptr)
     {

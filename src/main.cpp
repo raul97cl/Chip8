@@ -1,14 +1,11 @@
 #include <iostream>
 #include "Chip.h"
-#include <stdlib.h>
-#include <time.h>
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
 	int last_tick = 0;
-	int cont = 0;
 	//Inicia emulador
 	Chip *chip8 = new Chip();
 	chip8->initialize();
@@ -26,10 +23,10 @@ int main(int argc, char **argv)
 											 SDL_TEXTUREACCESS_STREAMING,
 											 64, 32);
 	SDL_Surface *surface = SDL_CreateRGBSurface(0, 64, 32, 32,
-													0x00FF0000,
-													0x0000FF00,
-													0x000000FF,
-													0xFF000000);
+												0x00FF0000,
+												0x0000FF00,
+												0x000000FF,
+												0xFF000000);
 	SDL_LockTexture(texture, nullptr, &surface->pixels, &surface->pitch);
 	chip8->screen_conversion((Uint32*)surface->pixels);
 	SDL_UnlockTexture(texture);

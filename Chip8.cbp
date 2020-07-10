@@ -8,6 +8,7 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Chip8" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="src" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -40,8 +41,8 @@
 			<Add directory="D:/C++/i686-w64-mingw32/lib" />
 		</Linker>
 		<Unit filename="include/Chip.h" />
-		<Unit filename="main.cpp" />
 		<Unit filename="src/Chip.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

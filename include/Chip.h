@@ -53,8 +53,6 @@ class Chip
 		void load_rom(std::string);
 		void initialize();
 		void step();
-		char wait_key;              //Tecla que estoy espeando
-		uint8_t v[16]; 				//16 registros de uso general
 		int pressed_key(char);
 		void screen_conversion(Uint32*);
 		void timer_decrement();
@@ -65,11 +63,12 @@ class Chip
 		uint16_t pc;				//Contador del programa
 		uint16_t stack[16];			//Pila. 16 registros de 16 bits
 		uint16_t sp; 				//Puntero de la pila
+		uint8_t v[16]; 				//16 registros de uso general
 		uint16_t i; 				//Registro especial de dirección I
 		uint8_t delay_timer;		//Temporizador
 		uint8_t sound_timer;		//Temporizador de sonido
+		char wait_key;              //Tecla que estoy espeando
 		char screen[2048];			//Pantalla
-
 
 };
 
