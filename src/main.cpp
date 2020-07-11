@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 	//Inicia emulador
 	Chip *chip8 = new Chip();
 	chip8->initialize();
-	chip8->load_rom("PONG");
+	chip8->load_rom(argv[1]);
 
 	//Inicia el motor SDL
 	SDL_Init(SDL_INIT_EVERYTHING);

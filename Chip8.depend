@@ -3,13 +3,14 @@
 	<iostream>
 	"Chip.h"
 
-1594372154 source:d:\c++\chip8\src\chip.cpp
+1594460508 source:d:\c++\chip8\src\chip.cpp
 	"Chip.h"
 
-1594371330 d:\c++\chip8\include\chip.h
+1594460380 d:\c++\chip8\include\chip.h
 	<iostream>
 	<fstream>
 	<SDL2/SDL.h>
+	<cstring>
 
 1583894277 d:\c++\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -365,7 +366,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1594281868 source:d:\c++\chip8\src\main.cpp
+1594460184 source:d:\c++\chip8\src\main.cpp
 	<iostream>
 	"Chip.h"
 

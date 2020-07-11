@@ -320,7 +320,8 @@ void Chip::step()
 
 void Chip::load_rom(std::string rom)
 {
-    FILE *file = fopen("../roms/PONG", "rb");
+	const char *directory_rom = ("../roms/"+rom).c_str();
+    FILE *file = fopen(directory_rom, "rb");
 
     if(file == nullptr)
     {

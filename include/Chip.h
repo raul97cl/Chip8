@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <SDL2/SDL.h>
+#include <cstring>
 
 class Chip
 {
