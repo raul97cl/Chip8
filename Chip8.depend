@@ -3,7 +3,7 @@
 	<iostream>
 	"Chip.h"
 
-1594460508 source:d:\c++\chip8\src\chip.cpp
+1594635596 source:d:\c++\chip8\src\chip.cpp
 	"Chip.h"
 
 1594460380 d:\c++\chip8\include\chip.h
@@ -366,7 +366,8 @@
 	"begin_code.h"
 	"close_code.h"
 
-1594460184 source:d:\c++\chip8\src\main.cpp
+1594635528 source:d:\c++\chip8\src\main.cpp
 	<iostream>
 	"Chip.h"
+	<math.h>
 

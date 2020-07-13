@@ -12,6 +12,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="PONG" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -21,6 +22,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="PONG" />
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
