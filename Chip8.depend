@@ -1,17 +1,16 @@
 # depslib dependency file v1.0
-1594237512 source:d:\c++\chip8\main.cpp
+1594281868 source:d:\c++\chip8\main.cpp
 	<iostream>
 	"Chip.h"
-	<stdlib.h>
-	<time.h>
 
-1594235020 source:d:\c++\chip8\src\chip.cpp
+1594635596 source:d:\c++\chip8\src\chip.cpp
 	"Chip.h"
 
-1594237260 d:\c++\chip8\include\chip.h
+1594460380 d:\c++\chip8\include\chip.h
 	<iostream>
 	<fstream>
 	<SDL2/SDL.h>
+	<cstring>
 
 1583894277 d:\c++\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -366,4 +365,9 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1594635528 source:d:\c++\chip8\src\main.cpp
+	<iostream>
+	"Chip.h"
+	<math.h>
 
